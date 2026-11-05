@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulheres Empreendedoras de Ouricuri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dourado: #c59b27;
+      --dourado-claro: #dfbe64;
+      --verde-escuro: #173829;
+      --verde-medio: #24523d;
+      --creme-fundo: #fcf9f2;
+      --branco: #ffffff;
+      --cinza-texto: #333333;
+      --cinza-suave: #6e6e6e;
+      --borda-dourada: rgba(197, 155, 39, 0.35);
+      --sombra: 0 10px 30px rgba(23, 56, 41, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--creme-fundo);
+      color: var(--cinza-texto);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 2px solid var(--borda-dourada);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--verde-escuro);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-text p {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--dourado);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--verde-escuro);
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--dourado);
+    }
+
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: 24px;
+      background: var(--verde-escuro);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-contact:hover {
+      background: var(--verde-medio);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 45px;
+      background: radial-gradient(circle at center, #ffffff 0%, var(--creme-fundo) 100%);
+      border-bottom: 1px solid var(--borda-dourada);
+    }
+
+    .hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--verde-escuro);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--dourado);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-quote {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      font-style: italic;
+      color: var(--cinza-suave);
+      font-size: 1.05rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(23, 56, 41, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      background: linear-gradient(135deg, var(--dourado), #a8831f);
+      transform: translateY(-2px);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 50px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--verde-escuro);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .section-title .divider {
+      width: 70px;
+      height: 3px;
+      background: var(--dourado);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* MISSÃO E VISÃO */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .mv-card {
+      background: var(--branco);
+      border: 1px solid var(--borda-dourada);
+      border-radius: 16px;
+      padding: 34px 28px;
+      box-shadow: var(--sombra);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .mv-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .mv-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--dourado), var(--verde-medio));
+    }
+
+    .mv-card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .mv-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--verde-escuro);
+      margin-bottom: 10px;
+    }
+
+    .mv-card p {
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* FILTROS INTERATIVOS */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: var(--branco);
+      border: 1.5px solid var(--borda-dourada);
+      color: var(--verde-escuro);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--verde-escuro);
+      color: #ffffff;
+      border-color: var(--verde-escuro);
+    }
+
+    /* LINKS CARDS */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .link-card {
+      background: var(--branco);
+      border: 1px solid #e7ded0;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--sombra);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--dourado);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(197, 155, 39, 0.15);
+    }
+
+    .link-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: rgba(197, 155, 39, 0.14);
+      color: #8c6a0c;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .link-card h5 {
+      font-size: 1.15rem;
+      color: var(--verde-escuro);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .link-card p {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--verde-escuro);
+      color: var(--verde-escuro);
+      padding: 9px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .link-btn:hover {
+      background: var(--verde-escuro);
+      color: #ffffff;
+    }
+
+    /* MURAL INSPIRACIONAL */
+    .quote-box {
+      background: linear-gradient(135deg, var(--verde-escuro), #0f271c);
+      color: #ffffff;
+      padding: 40px 24px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 50px;
+      border: 2px solid var(--dourado);
+    }
+
+    .quote-box blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #f7eed8;
+    }
+
+    .quote-box cite {
+      font-size: 0.9rem;
+      color: var(--dourado-claro);
+      font-style: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .contact-section {
+      padding: 36px 24px;
+      border: 1px solid var(--borda-dourada);
+      border-radius: 16px;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+      text-align: center;
+    }
+
+    .contact-section h3 {
+      margin-bottom: 8px;
+      color: var(--verde-escuro);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+    }
+
+    .contact-section > p {
+      margin: 0 auto 20px;
+      max-width: 680px;
+      color: var(--cinza-suave);
+    }
+
+    .quick-messages {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .quick-message {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border: 1px solid var(--verde-escuro);
+      border-radius: 24px;
+      background: var(--verde-escuro);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .quick-message:hover {
+      background: var(--verde-medio);
+      transform: translateY(-2px);
+    }
+
+    .quick-message:focus-visible,
+    .nav-contact:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 18px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-links {
+        gap: 8px 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .contact-section {
+        padding: 28px 18px;
+      }
+
+      .quick-message {
+        width: 100%;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111a15;
+      color: #e0e0e0;
+      padding: 36px 20px;
+      text-align: center;
+      border-top: 3px solid var(--dourado);
+      margin-top: 70px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    footer .sub {
+      font-size: 0.8rem;
+      color: #9e9e9e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-text">
+          <h1>Mulheres Empreendedoras</h1>
+          <p>Ouricuri - PE</p>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#proposito">Propósito</a></li>
+        <li><a href="#links">Sites Úteis & Gratuitos</a></li>
+        <li><a href="#mural">Inspiração</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="nav-contact" href="https://wa.me/5587992046673?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20o%20Projeto%20Mulheres%20Empreendedoras." target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp no número 87 99204-6673">WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Mulheres Empreendedoras</h2>
+    <div class="hero-tagline">De Ouricuri</div>
+    <p class="hero-quote">“Conectando sonhos. Fortalecendo mulheres.”</p>
+    <a href="#links" class="hero-btn">Acessar Ferramentas Gratuitas ↓</a>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <main class="container">
+    <!-- MISSÃO E VISÃO -->
+    <section id="proposito">
+      <div class="section-title">
+        <h3>Nosso Propósito</h3>
+        <div class="divider"></div>
+      </div>
+
+      <div class="mv-grid">
+        <div class="mv-card">
+          <span class="icon">✨</span>
+          <h4>Nossa Missão</h4>
+          <p>
+            Promover a conexão, o protagonismo e o fortalecimento de mulheres no ecossistema de negócios locais, oferecendo suporte mútuo, capacitação prática e inspiração mútua para transformar sonhos individuais em projetos sólidos e sustentáveis.
+          </p>
+        </div>
+
+        <div class="mv-card">
+          <span class="icon">👑</span>
+          <h4>Nossa Visão</h4>
+          <p>
+            Ser a principal rede de referência comunitária em liderança e empreendedorismo feminino da região do Araripe, impulsionando a autonomia financeira, o desenvolvimento de novas lideranças e a formação de redes de cooperação duradouras.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKS ÚTEIS E GRATUITOS -->
+    <section id="links">
+      <div class="section-title">
+        <h3>Links Úteis Gratuitos para Empreendedoras</h3>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filtrar(event, 'todos')">Todos</button>
+        <button class="filter-btn" onclick="filtrar(event, 'capacitacao')">Cursos e Capacitação</button>
+        <button class="filter-btn" onclick="filtrar(event, 'formalizacao')">Formalização & MEI</button>
+        <button class="filter-btn" onclick="filtrar(event, 'ferramentas')">Design e Ferramentas</button>
+        <button class="filter-btn" onclick="filtrar(event, 'direitos')">Rede de Apoio & Direitos</button>
+      </div>
+
+      <div class="links-grid" id="cardsLinks">
+        <!-- Card 1 -->
+        <div class="link-card" data-cat="capacitacao">
+          <div>
+            <span class="link-badge">Capacitação</span>
+            <h5>Sebrae Delas</h5>
+            <p>Programa gratuito voltado exclusivamente a estimular, valorizar e acelerar a jornada de mulheres à frente dos negócios.</p>
+          </div>
+          <a href="https://sebrae.com.br/sites/PortalSebrae/empreendedorismofeminino" target="_blank" rel="noopener noreferrer" class="link-btn">Acessar Plataforma ↗</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="link-card" data-cat="formalizacao">
+          <div>
+            <span class="link-badge">Formalização</span>
+            <h5>Portal do Empreendedor (Gov.br)</h5>
+            <p>Canal oficial e gratuito do Governo Federal para abertura, emissão de DAS, declarações e regularização do MEI.</p>
+          </div>
+          <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor" target="_blank" rel="noopener noreferrer" class="link-btn">Acessar Gov.br ↗</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="link-card" data-cat="capacitacao">
+          <div>
+            <span class="link-badge">Rede & Cursos</span>
+            <h5>Rede Mulher Empreendedora</h5>
+            <p>Maior plataforma de apoio ao empreendedorismo feminino do Brasil, oferecendo mentorias, cursos gratuitos e networking.</p>
+          </div>
+          <a href="https://rme.net.br" target="_blank" rel="noopener noreferrer" class="link-btn">Conhecer a RME ↗</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="link-card" data-cat="capacitacao">
+          <div>
+            <span class="link-badge">Cursos Gratuitos</span>
+            <h5>Escola Virtual Gov (EV.G)</h5>
+            <p>Centenas de cursos 100% online, gratuitos e com certificado emitido sobre gestão financeira, liderança e comunicação.</p>
+          </div>
+          <a href="https://www.escolavirtual.gov.br" target="_blank" rel="noopener noreferrer" class="link-btn">Explorar Cursos ↗</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="link-card" data-cat="ferramentas">
+          <div>
+            <span class="link-badge">Design</span>
+            <h5>Canva (Versão Gratuita)</h5>
+            <p>Ferramenta intuitiva para criação de logotipos, posts de Instagram, catálogos digitais de produtos e cartões de visita.</p>
+          </div>
+          <a href="https://www.canva.com/pt_br/" target="_blank" rel="noopener noreferrer" class="link-btn">Criar Designs ↗</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="link-card" data-cat="ferramentas">
+          <div>
+            <span class="link-badge">Vendas</span>
+            <h5>WhatsApp Business</h5>
+            <p>Aplicativo gratuito para organizar catálogo de produtos, mensagens automáticas e atendimento profissional aos clientes.</p>
+          </div>
+          <a href="https://www.whatsapp.com/business" target="_blank" rel="noopener noreferrer" class="link-btn">Baixar Aplicativo ↗</a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="link-card" data-cat="direitos">
+          <div>
+            <span class="link-badge">Apoio Feminino</span>
+            <h5>Mulheres Positivas</h5>
+            <p>Ecossistema dedicado ao desenvolvimento pessoal e profissional feminino, vagas de emprego e conteúdo de autonomia.</p>
+          </div>
+          <a href="https://mulherespositivas.com.br" target="_blank" rel="noopener noreferrer" class="link-btn">Acessar Conteúdos ↗</a>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="link-card" data-cat="direitos">
+          <div>
+            <span class="link-badge">Direitos & Informação</span>
+            <h5>Ministério das Mulheres</h5>
+            <p>Programas públicos, canais de proteção, editais de fomento e direitos das mulheres no Brasil (Disque 180).</p>
+          </div>
+          <a href="https://www.gov.br/mulheres/pt-br" target="_blank" rel="noopener noreferrer" class="link-btn">Acessar Portal ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MURAL -->
+    <section id="mural">
+      <div class="quote-box">
+        <blockquote>“Se você não se comprometer com nada, você se distrairá com tudo.”</blockquote>
+        <cite>Mulheres Empreendedoras de Ouricuri • Foco e Propósito</cite>
+      </div>
+    </section>
+
+    <section id="contato" class="contact-section" aria-labelledby="contactTitle">
+      <h3 id="contactTitle">Fale com o Projeto</h3>
+      <p>Escolha uma mensagem rápida. O WhatsApp abrirá a conversa com o texto preenchido; revise e toque em enviar para concluir o contato.</p>
+      <div class="quick-messages">
+        <a class="quick-message" href="https://wa.me/5587992046673?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20o%20Projeto%20Mulheres%20Empreendedoras." target="_blank" rel="noopener noreferrer">Quero conhecer o projeto</a>
+        <a class="quick-message" href="https://wa.me/5587992046673?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20participar%20do%20Projeto%20Mulheres%20Empreendedoras." target="_blank" rel="noopener noreferrer">Tenho interesse em participar</a>
+        <a class="quick-message" href="https://wa.me/5587992046673?text=Ol%C3%A1%21%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Projeto%20Mulheres%20Empreendedoras." target="_blank" rel="noopener noreferrer">Tenho uma dúvida</a>
+      </div>
+      <p style="margin-top: 18px; margin-bottom: 0;">Telefone/WhatsApp: <a href="tel:+5587992046673">(87) 99204-6673</a></p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Mulheres Empreendedoras de Ouricuri</strong></p>
+    <p class="sub">Conectando sonhos • Fortalecendo mulheres • Ouricuri - PE</p>
+    <p class="sub" style="margin-top: 10px;">Desenvolvido com dedicação para as empreendedoras do Sertão do Araripe.</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function filtrar(e, categoria) {
+      const botoes = document.querySelectorAll('.filter-btn');
+      botoes.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.link-card');
+      cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-cat') === categoria) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
