@@ -170,6 +170,78 @@
       transform: translateY(-2px);
     }
 
+    .accessibility-tools {
+      max-width: 1160px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+    }
+
+    .accessibility-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--borda-dourada);
+      border-radius: 12px;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+    }
+
+    .accessibility-panel p {
+      flex: 1 1 320px;
+      color: var(--cinza-texto);
+      font-size: 0.9rem;
+    }
+
+    .accessibility-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .accessibility-actions button,
+    .accessibility-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 14px;
+      border: 1px solid var(--verde-escuro);
+      border-radius: 8px;
+      background: var(--verde-escuro);
+      color: #ffffff;
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .accessibility-actions button:hover:not(:disabled),
+    .accessibility-actions a:hover {
+      background: var(--verde-medio);
+    }
+
+    .accessibility-actions button:focus-visible,
+    .accessibility-actions a:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: 3px;
+    }
+
+    .accessibility-actions button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .accessibility-status {
+      flex-basis: 100%;
+      min-height: 1.4em;
+      color: var(--cinza-suave);
+      font-size: 0.85rem;
+    }
+
     /* CONTAINER */
     .container {
       max-width: 1160px;
@@ -386,6 +458,82 @@
       text-align: center;
     }
 
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      gap: 20px;
+    }
+
+    .event-card {
+      overflow: hidden;
+      border: 1px solid #e7ded0;
+      border-radius: 14px;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(197, 155, 39, 0.15);
+    }
+
+    .event-card a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .event-card a:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: -3px;
+    }
+
+    .event-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #f0ece4;
+    }
+
+    .event-placeholder {
+      display: flex;
+      min-height: 300px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 2px dashed var(--borda-dourada);
+      background: rgba(255, 255, 255, 0.65);
+      text-align: center;
+    }
+
+    .event-placeholder-mark {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 12px;
+      place-items: center;
+      border: 2px solid var(--dourado);
+      border-radius: 50%;
+      color: var(--verde-escuro);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .event-placeholder p {
+      margin-top: 6px;
+      color: var(--cinza-suave);
+      font-size: 0.84rem;
+    }
+
+    .event-card figcaption {
+      padding: 14px 16px;
+      color: var(--verde-escuro);
+      font-weight: 600;
+    }
+
     .contact-section h3 {
       margin-bottom: 8px;
       color: var(--verde-escuro);
@@ -508,6 +656,7 @@
       <ul class="nav-links">
         <li><a href="#proposito">Propósito</a></li>
         <li><a href="#links">Sites Úteis & Gratuitos</a></li>
+        <li><a href="#eventos">Nossos eventos</a></li>
         <li><a href="#mural">Inspiração</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -521,6 +670,18 @@
     <div class="hero-tagline">De Ouricuri</div>
     <p class="hero-quote">“Conectando sonhos. Fortalecendo mulheres.”</p>
     <a href="#links" class="hero-btn">Acessar Ferramentas Gratuitas ↓</a>
+  </section>
+
+  <section class="accessibility-tools" aria-label="Recursos gratuitos de acessibilidade">
+    <div class="accessibility-panel">
+      <p><strong>Acessibilidade:</strong> use o VLibras gratuito para tradução em Libras ou a leitura em voz alta do navegador. A disponibilidade de voz em português depende do dispositivo.</p>
+      <div class="accessibility-actions">
+        <a href="https://vlibras.gov.br/" target="_blank" rel="noopener noreferrer">Conheça o VLibras gratuito</a>
+        <button type="button" id="speakPageButton">Ouvir descrição e conteúdos</button>
+        <button type="button" id="stopReadingButton" disabled>Parar leitura</button>
+      </div>
+      <p class="accessibility-status" id="accessibilityStatus" aria-live="polite"></p>
+    </div>
   </section>
 
   <!-- CONTEÚDO -->
@@ -650,6 +811,61 @@
       </div>
     </section>
 
+    <section id="eventos" aria-labelledby="eventsTitle">
+      <div class="section-title">
+        <h3 id="eventsTitle">Nossos eventos</h3>
+        <div class="divider"></div>
+      </div>
+      <p style="margin: 0 0 20px; text-align: center; color: var(--cinza-suave);">Registros dos encontros e espaços reservados para adicionar novas fotos em futuras atualizações do site.</p>
+      <div class="events-grid">
+        <figure class="event-card">
+          <a href="evento-01.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto do encontro do grupo">
+            <img src="evento-01.png" alt="Empreendedoras reunidas ao redor de uma mesa durante um encontro do grupo" loading="lazy">
+            <figcaption>Encontro do grupo</figcaption>
+          </a>
+        </figure>
+        <figure class="event-card">
+          <a href="evento-02.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar retrato de participante">
+            <img src="evento-02.png" alt="Retrato de uma participante do projeto diante de um painel decorado" loading="lazy">
+            <figcaption>Participantes do projeto</figcaption>
+          </a>
+        </figure>
+        <figure class="event-card">
+          <a href="evento-03.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto do encontro de empreendedoras">
+            <img src="evento-03.png" alt="Grupo de empreendedoras reunido em um encontro do projeto" loading="lazy">
+            <figcaption>Rede de empreendedoras</figcaption>
+          </a>
+        </figure>
+        <figure class="event-card">
+          <a href="evento-04.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto do evento">
+            <img src="evento-04.png" alt="Participantes reunidas para uma foto em um evento do projeto" loading="lazy">
+            <figcaption>Registro do evento</figcaption>
+          </a>
+        </figure>
+        <figure class="event-card">
+          <a href="evento-05.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar imagem com mensagem inspiradora">
+            <img src="evento-05.png" alt="Mensagem na parede: Se você não se comprometer com nada, você se distrairá com tudo" loading="lazy">
+            <figcaption>Inspiração e propósito</figcaption>
+          </a>
+        </figure>
+        <figure class="event-card event-placeholder" aria-label="Espaço reservado para uma nova foto de evento">
+          <div class="event-placeholder-mark" aria-hidden="true">+</div>
+          <figcaption>Espaço para próxima foto</figcaption>
+          <p>Imagem adicionada na próxima atualização do site</p>
+        </figure>
+        <figure class="event-card event-placeholder" aria-label="Espaço reservado para uma nova foto de evento">
+          <div class="event-placeholder-mark" aria-hidden="true">+</div>
+          <figcaption>Espaço para próxima foto</figcaption>
+          <p>Imagem adicionada na próxima atualização do site</p>
+        </figure>
+        <figure class="event-card event-placeholder" aria-label="Espaço reservado para uma nova foto de evento">
+          <div class="event-placeholder-mark" aria-hidden="true">+</div>
+          <figcaption>Espaço para próxima foto</figcaption>
+          <p>Imagem adicionada na próxima atualização do site</p>
+        </figure>
+      </div>
+    </section>
+
     <!-- MURAL -->
     <section id="mural">
       <div class="quote-box">
@@ -676,6 +892,68 @@
     <p class="sub">Conectando sonhos • Fortalecendo mulheres • Ouricuri - PE</p>
     <p class="sub" style="margin-top: 10px;">Desenvolvido com dedicação para as empreendedoras do Sertão do Araripe.</p>
   </footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    if (window.VLibras && window.VLibras.Widget) {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    } else {
+      document.getElementById('accessibilityStatus').textContent = 'Não foi possível carregar o VLibras agora. Use o link oficial para acessá-lo.';
+    }
+
+    (() => {
+      const speakButton = document.getElementById('speakPageButton');
+      const stopButton = document.getElementById('stopReadingButton');
+      const status = document.getElementById('accessibilityStatus');
+
+      function finishReading(message) {
+        speakButton.disabled = false;
+        stopButton.disabled = true;
+        status.textContent = message;
+      }
+
+      if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+        speakButton.disabled = true;
+        status.textContent = 'Este navegador não oferece leitura em voz alta. Use o VLibras ou um recurso de acessibilidade do dispositivo.';
+        return;
+      }
+
+      speakButton.addEventListener('click', () => {
+        const eventDescriptions = [...document.querySelectorAll('.event-card img')]
+          .map(image => image.alt)
+          .filter(Boolean)
+          .join('. ');
+        const description = 'Descrição da página: Projeto Mulheres Empreendedoras de Ouricuri, com informações, ferramentas gratuitas, mensagens de contato pelo WhatsApp e uma galeria de registros dos eventos. ';
+        const content = document.querySelector('main').innerText;
+        const utterance = new SpeechSynthesisUtterance(`${description}${content} Descrição das imagens: ${eventDescriptions}`);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 0.95;
+        utterance.onend = () => finishReading('Leitura concluída.');
+        utterance.onerror = event => {
+          if (event.error !== 'canceled' && event.error !== 'interrupted') {
+            finishReading('A leitura foi interrompida pelo navegador. Tente novamente ou use um recurso de acessibilidade do dispositivo.');
+          }
+        };
+        window.speechSynthesis.cancel();
+        speakButton.disabled = true;
+        stopButton.disabled = false;
+        status.textContent = 'Lendo a descrição e os conteúdos visíveis. A voz é fornecida pelo navegador.';
+        window.speechSynthesis.speak(utterance);
+      });
+
+      stopButton.addEventListener('click', () => {
+        window.speechSynthesis.cancel();
+        finishReading('Leitura interrompida.');
+      });
+    })();
+  </script>
 
   <!-- SCRIPT -->
   <script>
